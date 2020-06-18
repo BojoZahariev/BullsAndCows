@@ -1,14 +1,18 @@
 var aiNum = [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)];
 var playerNum = [];
 var myNumber = [];
+var bulls = 0;
+var cows = 0;
 const numbersForm = document.querySelector('#numbersForm');
 const submitBtn = document.querySelector('#submitBtn');
+
 var n1 = document.querySelector('#n1');
 var n2 = document.querySelector('#n2');
 var n3 = document.querySelector('#n3');
 var n4 = document.querySelector('#n4');
 
 var myNumberText = document.querySelector('#myNumberText');
+const result = document.querySelector('#result');
 console.log(`ai: ${aiNum}`);
 
 submitBtn.addEventListener('click', e => {
@@ -22,9 +26,11 @@ const compare = (arr1, arr2) => {
   for (i = 0; i < arr1.length; i++) {
     console.log(arr1[i], arr2[i]);
     if (arr1[i] === arr2[i]) {
-      console.log('bull');
+      bulls += 1;
     } else {
-      console.log('cow');
+      cows += 1;
     }
   }
+
+  result.textContent = `bulls: ${bulls} cows: ${cows}`;
 };
