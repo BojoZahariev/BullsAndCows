@@ -12,7 +12,11 @@ var n3 = document.querySelector('#n3');
 var n4 = document.querySelector('#n4');
 
 var myNumberText = document.querySelector('#myNumberText');
+var aiNumberText = document.querySelector('#aiNumberText');
+
 const result = document.querySelector('#result');
+
+aiNumberText.textContent = aiNum;
 console.log(`ai: ${aiNum}`);
 
 submitBtn.addEventListener('click', e => {
