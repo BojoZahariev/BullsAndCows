@@ -1,6 +1,6 @@
 var aiNum = [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)];
 var playerNum = [];
-var myNumber = [];
+var myGuess = [];
 var bulls = 0;
 var cows = 0;
 const numbersForm = document.querySelector('#numbersForm');
@@ -11,7 +11,7 @@ var n2 = document.querySelector('#n2');
 var n3 = document.querySelector('#n3');
 var n4 = document.querySelector('#n4');
 
-var myNumberText = document.querySelector('#myNumberText');
+var myGuessText = document.querySelector('#myGuessText');
 var aiNumberText = document.querySelector('#aiNumberText');
 
 const result = document.querySelector('#result');
@@ -20,9 +20,9 @@ aiNumberText.textContent = aiNum;
 console.log(`ai: ${aiNum}`);
 
 submitBtn.addEventListener('click', e => {
-  myNumber = [Number(n1.value), Number(n2.value), Number(n3.value), Number(n4.value)];
-  myNumberText.textContent = myNumber;
-  compare(aiNum, myNumber);
+  myGuess = [Number(n1.value), Number(n2.value), Number(n3.value), Number(n4.value)];
+  myGuessText.textContent = myGuess;
+  compare(aiNum, myGuess);
   numbersForm.reset();
 });
 
