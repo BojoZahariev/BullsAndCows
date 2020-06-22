@@ -1,30 +1,30 @@
+const numbersForm = document.querySelector('#numbersForm');
+const submitBtn = document.querySelector('#submitBtn');
+const aiNumberText = document.querySelector('#aiNumberText');
+const myNumberText = document.querySelector('#myNumberText');
+const myGuessText = document.querySelector('#myGuessText');
+
+const result = document.querySelector('#result');
+const result2 = document.querySelector('#result2');
+
 var aiNum = [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)];
 var playerNum = [];
 var myGuess = [];
 let aiGuess = [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)];
-//let aiGuess = [];
-let aiHelpGuess = ['', '', '', ''];
-myNumber = [1, 2, 3, 4];
+
+var aiHelpGuess = ['', '', '', ''];
+var myNumber = [1, 2, 3, 4];
 var myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 var bulls = 0;
 var cows = 0;
 var bulls2 = 0;
 var cows2 = 0;
-const numbersForm = document.querySelector('#numbersForm');
-const submitBtn = document.querySelector('#submitBtn');
 
 var n1 = document.querySelector('#n1');
 var n2 = document.querySelector('#n2');
 var n3 = document.querySelector('#n3');
 var n4 = document.querySelector('#n4');
-
-var aiNumberText = document.querySelector('#aiNumberText');
-var myNumberText = document.querySelector('#myNumberText');
-var myGuessText = document.querySelector('#myGuessText');
-
-const result = document.querySelector('#result');
-const result2 = document.querySelector('#result2');
 
 aiNumberText.textContent = aiNum;
 myNumberText.textContent = myNumber;
@@ -65,6 +65,8 @@ const compareAi = (arr1, arr2) => {
     } else if (arr1.indexOf(arr2[i]) !== -1) {
       cows2 += 1;
     } else if (arr1.indexOf(arr2[i]) === -1) {
+      //remove that number from the array for hard
+      //don't for easy
       myArray.splice(arr2[i], 1);
     }
   }
