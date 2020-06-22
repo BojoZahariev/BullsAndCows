@@ -20,6 +20,7 @@ aiNumberText.textContent = aiNum;
 console.log(`ai: ${aiNum}`);
 
 submitBtn.addEventListener('click', e => {
+  res();
   myGuess = [Number(n1.value), Number(n2.value), Number(n3.value), Number(n4.value)];
   myGuessText.textContent = myGuess;
   compare(aiNum, myGuess);
@@ -39,4 +40,9 @@ const compare = (arr1, arr2) => {
   }
 
   result.textContent = `bulls: ${bulls} cows: ${cows}`;
+};
+
+const res = () => {
+  bulls = 0;
+  cows = 0;
 };
