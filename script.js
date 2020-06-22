@@ -24,14 +24,16 @@ submitBtn.addEventListener('click', e => {
   myGuessText.textContent = myGuess;
   compare(aiNum, myGuess);
   numbersForm.reset();
+  console.log(`myGuess ${myGuess}`);
+  console.log(`aiNum ${aiNum}`);
 });
 
 const compare = (arr1, arr2) => {
-  for (i = 0; i < arr1.length; i++) {
+  for (i = 0; i < arr2.length; i++) {
     console.log(arr1[i], arr2[i]);
-    if (arr1[i] === arr2[i]) {
+    if (arr2[i] === arr1[i]) {
       bulls += 1;
-    } else {
+    } else if (arr1.indexOf(arr2[i]) !== -1) {
       cows += 1;
     }
   }
