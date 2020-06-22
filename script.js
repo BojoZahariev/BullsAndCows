@@ -5,6 +5,7 @@ let aiGuess = [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), M
 //let aiGuess = [];
 let aiHelpGuess = ['', '', '', ''];
 myNumber = [1, 2, 3, 4];
+var myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 var bulls = 0;
 var cows = 0;
@@ -34,17 +35,18 @@ submitBtn.addEventListener('click', e => {
   myGuessText.textContent = myGuess;
 
   getAiNumber();
-  //aiGuess = [...aiHelpGuess];
+
   compare(aiNum, myGuess);
-  console.log(`aiHelpGuess ${aiHelpGuess}`);
-  console.log(`aiGuess ${aiGuess}`);
+
   compareAi(myNumber, aiGuess);
   numbersForm.reset();
+
+  console.log(`aiHelpGuess ${aiHelpGuess}`);
+  console.log(`aiGuess ${aiGuess}`);
 });
 
 const compare = (arr1, arr2) => {
   for (i = 0; i < arr2.length; i++) {
-    console.log(arr1[i], arr2[i]);
     if (arr2[i] === arr1[i]) {
       bulls += 1;
     } else if (arr1.indexOf(arr2[i]) !== -1) {
@@ -57,15 +59,15 @@ const compare = (arr1, arr2) => {
 
 const compareAi = (arr1, arr2) => {
   for (i = 0; i < arr2.length; i++) {
-    console.log(arr1[i], arr2[i]);
     if (arr2[i] === arr1[i]) {
       aiHelpGuess[i] = arr2[i];
       bulls2 += 1;
     } else if (arr1.indexOf(arr2[i]) !== -1) {
       cows2 += 1;
+    } else if (arr1.indexOf(arr2[i]) === -1) {
+      myArray.splice(arr2[i], 1);
     }
   }
-  console.log(`aiHelpGuess ${aiHelpGuess}`);
 
   result2.textContent = `Ai bulls: ${bulls2} cows: ${cows2}`;
 };
@@ -73,20 +75,12 @@ const compareAi = (arr1, arr2) => {
 const getAiNumber = () => {
   for (i = 0; i < aiHelpGuess.length; i++) {
     if (aiHelpGuess[i] === '') {
-      aiGuess[i] = Math.floor(Math.random() * 10);
+      aiGuess[i] = randomNumber();
     } else {
       aiGuess[i] = aiHelpGuess[i];
     }
   }
 };
-
-/*
-const rand = () => {
-  let a = Math.floor(Math.random() * 10);
-  console.log(`a${a}`);
-  return a;
-};
-*/
 
 const res = () => {
   bulls = 0;
@@ -94,3 +88,10 @@ const res = () => {
   bulls2 = 0;
   cows2 = 0;
 };
+
+const randomNumber = () => {
+  console.log(myArray);
+  return myArray[Math.floor(Math.random() * myArray.length)];
+};
+
+randomNumber();
