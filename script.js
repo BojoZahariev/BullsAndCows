@@ -7,10 +7,15 @@ const myGuessText = document.querySelector('#myGuessText');
 const result = document.querySelector('#result');
 const result2 = document.querySelector('#result2');
 
-var aiNum = [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)];
+var aiNum = [];
 var playerNum = [];
 var myGuess = [];
-let aiGuess = [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)];
+let aiGuess = [
+  Math.floor(Math.random() * (9 - 1 + 1)) + 1,
+  Math.floor(Math.random() * (9 - 1 + 1)) + 1,
+  Math.floor(Math.random() * (9 - 1 + 1)) + 1,
+  Math.floor(Math.random() * (9 - 1 + 1)) + 1
+];
 
 var aiHelpGuess = ['', '', '', ''];
 var myNumber = [1, 2, 3, 4];
@@ -26,7 +31,6 @@ var n2 = document.querySelector('#n2');
 var n3 = document.querySelector('#n3');
 var n4 = document.querySelector('#n4');
 
-aiNumberText.textContent = aiNum;
 myNumberText.textContent = myNumber;
 
 submitBtn.addEventListener('click', e => {
@@ -34,7 +38,7 @@ submitBtn.addEventListener('click', e => {
   myGuess = [Number(n1.value), Number(n2.value), Number(n3.value), Number(n4.value)];
   myGuessText.textContent = myGuess;
 
-  getAiNumber();
+  getAiGuess();
 
   compare(aiNum, myGuess);
 
@@ -74,7 +78,26 @@ const compareAi = (arr1, arr2) => {
   result2.textContent = `Ai bulls: ${bulls2} cows: ${cows2}`;
 };
 
-const getAiNumber = () => {
+const getAiGuess = () => {
+  for (let i = 0; i < aiHelpGuess.length; i++) {
+    if (aiHelpGuess[i] !== '') {
+      aiGuess[i] = aiHelpGuess[i];
+    }
+  }
+
+  let i = 0;
+  let a = randomNumber();
+  while (i < aiGuess.length) {
+    if (aiGuess.indexOf(a) === -1) {
+      aiGuess[i] = a;
+      a = randomNumber();
+      i++;
+    } else {
+      a = randomNumber();
+    }
+  }
+
+  /*
   for (i = 0; i < aiHelpGuess.length; i++) {
     if (aiHelpGuess[i] === '') {
       aiGuess[i] = randomNumber();
@@ -82,7 +105,43 @@ const getAiNumber = () => {
       aiGuess[i] = aiHelpGuess[i];
     }
   }
+
+  /*
+  //Only unique numbers
+  let i = 0;
+  while (i < amount) {
+    if (myArray.indexOf(randomNumber) === -1) {
+      myArray.push(randomNumber);
+      randomNumber = rngSeed.nextRange(1, range);
+      i++;
+    } else {
+      randomNumber = rngSeed.nextRange(1, range);
+    }
+  }
+  */
 };
+
+getAiNumber = () => {
+  //Only unique numbers
+  let myArray = [];
+  let ranNum = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
+  let i = 0;
+  while (i < 4) {
+    if (myArray.indexOf(ranNum) === -1) {
+      myArray.push(ranNum);
+      ranNum = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
+      i++;
+    } else {
+      ranNum = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
+    }
+  }
+
+  console.log(`num ${myArray}`);
+  return myArray;
+};
+
+aiNum = getAiNumber();
+aiNumberText.textContent = aiNum;
 
 const res = () => {
   bulls = 0;
@@ -92,8 +151,5 @@ const res = () => {
 };
 
 const randomNumber = () => {
-  console.log(myArray);
   return myArray[Math.floor(Math.random() * myArray.length)];
 };
-
-randomNumber();
