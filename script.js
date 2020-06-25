@@ -48,10 +48,9 @@ submitBtn1.addEventListener('click', e => {
   if (!hasDuplicates(myNumber)) {
     initialDiv.style.display = 'none';
     gameDiv.style.display = 'block';
+    myNumberText.textContent = myNumber;
   }
 });
-
-myNumberText.textContent = myNumber;
 
 submitBtn2.addEventListener('click', e => {
   res();
