@@ -37,9 +37,18 @@ var n2 = document.querySelector('#n2');
 var n3 = document.querySelector('#n3');
 var n4 = document.querySelector('#n4');
 
+//Duplicate numbers check
+function hasDuplicates(array) {
+  console.log(new Set(array).size !== array.length);
+  return new Set(array).size !== array.length;
+}
+
 submitBtn1.addEventListener('click', e => {
-  initialDiv.style.display = 'none';
-  gameDiv.style.display = 'block';
+  //Duplicate numbers check
+  if (!hasDuplicates(myNumber)) {
+    initialDiv.style.display = 'none';
+    gameDiv.style.display = 'block';
+  }
 });
 
 myNumberText.textContent = myNumber;
