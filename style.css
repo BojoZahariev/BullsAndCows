@@ -1,0 +1,11 @@
+#gameDiv {
+  display: none;
+}
+
+.numbersForm {
+  display: flex;
+}
+
+.numbersFormPart {
+  margin: 10px;
+}

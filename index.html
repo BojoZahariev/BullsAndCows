@@ -14,19 +14,53 @@
   </head>
   <body>
     <div class="main">
-      <p>AI number<span id="aiNumberText"></span></p>
-      <p>My number<span id="myNumberText"></span></p>
-      <p>My guess<span id="myGuessText"></span></p>
-      <p>AI guess<span id="aiGuessText"></span></p>
-      <p id="result"></p>
-      <p id="result2"></p>
-      <form id="numbersForm">
-        <input id="n1" type="number" />
-        <input id="n2" type="number" />
-        <input id="n3" type="number" />
-        <input id="n4" type="number" />
-      </form>
-      <button id="submitBtn" type="submit">Submit</button>
+      <div id="initialDiv">
+        <div class="numbersForm" id="numbersForm1">
+          <div class="numbersFormPart">
+            <button type="button" onclick="clickControl('inc', 0)">+</button>
+            <p class="numbers1">1</p>
+            <button type="button" onclick="clickControl('dec', 0)">-</button>
+          </div>
+
+          <div class="numbersFormPart">
+            <button type="button" onclick="clickControl('inc', 1)">+</button>
+            <p class="numbers1">1</p>
+            <button type="button" onclick="clickControl('dec', 1)">-</button>
+          </div>
+
+          <div class="numbersFormPart">
+            <button type="button" onclick="clickControl('inc', 2)">+</button>
+            <p class="numbers1">1</p>
+            <button type="button" onclick="clickControl('dec', 2)">-</button>
+          </div>
+
+          <div class="numbersFormPart">
+            <button type="button" onclick="clickControl('inc', 3)">+</button>
+            <p class="numbers1">1</p>
+            <button type="button" onclick="clickControl('dec', 3)">-</button>
+          </div>
+        </div>
+        <button id="submitBtn1" type="submit">Submit</button>
+      </div>
+
+      <div id="gameDiv" class="containers">
+        <p>AI number<span id="aiNumberText"></span></p>
+        <p>My number<span id="myNumberText"></span></p>
+        <p>My guess<span id="myGuessText"></span></p>
+        <p>AI guess<span id="aiGuessText"></span></p>
+        <p id="result"></p>
+        <p id="result2"></p>
+        <form id="numbersForm">
+          <button id="b1inc" type="button">+</button>
+          <p id="n1" type="number">0</p>
+          <button id="b1dec" type="button">-</button>
+
+          <input id="n2" type="number" />
+          <input id="n3" type="number" />
+          <input id="n4" type="number" />
+        </form>
+        <button id="submitBtn2" type="submit">Submit</button>
+      </div>
     </div>
 
     <script src="script.js"></script>

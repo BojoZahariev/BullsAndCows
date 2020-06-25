@@ -1,9 +1,14 @@
+const initialDiv = document.querySelector('#initialDiv');
+const gameDiv = document.querySelector('#gameDiv');
 const numbersForm = document.querySelector('#numbersForm');
-const submitBtn = document.querySelector('#submitBtn');
+const submitBtn1 = document.querySelector('#submitBtn1');
+const submitBtn2 = document.querySelector('#submitBtn2');
 const aiNumberText = document.querySelector('#aiNumberText');
 const myNumberText = document.querySelector('#myNumberText');
 const myGuessText = document.querySelector('#myGuessText');
 const aiGuessText = document.querySelector('#aiGuessText');
+
+const numbers1 = document.getElementsByClassName('numbers1');
 
 const result = document.querySelector('#result');
 const result2 = document.querySelector('#result2');
@@ -19,7 +24,7 @@ let aiGuess = [
 ];
 
 var aiHelpGuess = ['', '', '', ''];
-var myNumber = [1, 2, 3, 4];
+var myNumber = [1, 1, 1, 1];
 var myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 var bulls = 0;
@@ -32,9 +37,14 @@ var n2 = document.querySelector('#n2');
 var n3 = document.querySelector('#n3');
 var n4 = document.querySelector('#n4');
 
+submitBtn1.addEventListener('click', e => {
+  initialDiv.style.display = 'none';
+  gameDiv.style.display = 'block';
+});
+
 myNumberText.textContent = myNumber;
 
-submitBtn.addEventListener('click', e => {
+submitBtn2.addEventListener('click', e => {
   res();
   myGuess = [Number(n1.value), Number(n2.value), Number(n3.value), Number(n4.value)];
   myGuessText.textContent = myGuess;
@@ -134,4 +144,24 @@ const res = () => {
 
 const randomNumber = () => {
   return myArray[Math.floor(Math.random() * myArray.length)];
+};
+
+b1inc.addEventListener('click', e => {
+  myNumber[0] += 1;
+  n1.textContent = myNumber[0];
+});
+
+b1dec.addEventListener('click', e => {
+  myNumber[0] -= 1;
+  n1.textContent = myNumber[0];
+});
+
+const clickControl = (act, n) => {
+  if (act === 'inc' && myNumber[n] < 9) {
+    myNumber[n] += 1;
+    Array.from(numbers1)[n].textContent = myNumber[n];
+  } else if (act === 'dec' && myNumber[n] > 1) {
+    myNumber[n] -= 1;
+    Array.from(numbers1)[n].textContent = myNumber[n];
+  }
 };
