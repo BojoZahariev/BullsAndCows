@@ -3,6 +3,7 @@ const submitBtn = document.querySelector('#submitBtn');
 const aiNumberText = document.querySelector('#aiNumberText');
 const myNumberText = document.querySelector('#myNumberText');
 const myGuessText = document.querySelector('#myGuessText');
+const aiGuessText = document.querySelector('#aiGuessText');
 
 const result = document.querySelector('#result');
 const result2 = document.querySelector('#result2');
@@ -99,28 +100,7 @@ const getAiGuess = () => {
     }
   }
 
-  /*
-  for (i = 0; i < aiHelpGuess.length; i++) {
-    if (aiHelpGuess[i] === '') {
-      aiGuess[i] = randomNumber();
-    } else {
-      aiGuess[i] = aiHelpGuess[i];
-    }
-  }
-
-  /*
-  //Only unique numbers
-  let i = 0;
-  while (i < amount) {
-    if (myArray.indexOf(randomNumber) === -1) {
-      myArray.push(randomNumber);
-      randomNumber = rngSeed.nextRange(1, range);
-      i++;
-    } else {
-      randomNumber = rngSeed.nextRange(1, range);
-    }
-  }
-  */
+  aiGuessText.textContent = aiGuess;
 };
 
 getAiNumber = () => {
