@@ -89,8 +89,10 @@ const getAiGuess = () => {
   let a = randomNumber();
   while (i < aiGuess.length) {
     if (aiGuess.indexOf(a) === -1) {
-      aiGuess[i] = a;
-      a = randomNumber();
+      if (aiGuess[i] !== aiHelpGuess[i]) {
+        aiGuess[i] = a;
+        a = randomNumber();
+      }
       i++;
     } else {
       a = randomNumber();
