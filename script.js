@@ -21,12 +21,7 @@ const result2 = document.querySelector('#result2');
 
 var aiNum = [];
 var myGuess = [1, 1, 1, 1];
-let aiGuess = [
-  Math.floor(Math.random() * (9 - 1 + 1)) + 1,
-  Math.floor(Math.random() * (9 - 1 + 1)) + 1,
-  Math.floor(Math.random() * (9 - 1 + 1)) + 1,
-  Math.floor(Math.random() * (9 - 1 + 1)) + 1
-];
+let aiGuess = [0, 0, 0, 0];
 
 var aiHelpGuess = ['', '', '', ''];
 var myNumber = [1, 1, 1, 1];
@@ -96,21 +91,14 @@ const compare = (arr1, arr2) => {
     }
   }
 
+  if (bulls === 4) {
+    win('You', myGuess);
+  }
+
   result.textContent = `bulls: ${bulls} cows: ${cows}`;
 };
 
 const compareAi = (arr1, arr2) => {
-  /*
-  var is_same =
-    arr1.length == arr2.length &&
-    arr1.every(function(element, index) {
-      return element === arr2[index];
-    });
-
-  if (is_same) {
-    win('Ai');
-  }
-*/
   for (i = 0; i < arr2.length; i++) {
     if (arr2[i] === arr1[i]) {
       aiHelpGuess[i] = arr2[i];
@@ -121,7 +109,7 @@ const compareAi = (arr1, arr2) => {
   }
 
   if (bulls2 === 4) {
-    win('Ai');
+    win('Ai', aiGuess);
   }
 
   result2.textContent = `Ai bulls: ${bulls2} cows: ${cows2}`;
@@ -204,10 +192,10 @@ const addNumber = n => {
   playedNumbers.appendChild(usedNum);
 };
 
-const win = winner => {
+const win = (winner, score) => {
   clearScreen();
   winScreen.style.display = 'block';
-  winScreen.textContent = `${winner} wins ${aiGuess}`;
+  winScreen.textContent = `${winner} win ${score}`;
 };
 
 const clearScreen = () => {
