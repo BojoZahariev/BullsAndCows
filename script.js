@@ -54,19 +54,23 @@ submitBtn1.addEventListener('click', e => {
 });
 
 submitBtn2.addEventListener('click', e => {
-  res();
-  myGuess = [Number(n1.value), Number(n2.value), Number(n3.value), Number(n4.value)];
-  myGuessText.textContent = myGuess;
+  //myGuess = [Number(n1.value), Number(n2.value), Number(n3.value), Number(n4.value)];
 
-  getAiGuess();
+  //Duplicate numbers check
+  if (!hasDuplicates(myGuess) && bulls2 !== 4) {
+    res();
+    myNumberText.textContent = myNumber;
+    getAiGuess();
+    compare(aiNum, myGuess);
+    setTimeout(() => {
+      compareAi(myNumber, aiGuess);
+      aiGuessText.textContent = aiGuess;
+    }, 3000);
 
-  compare(aiNum, myGuess);
-
-  compareAi(myNumber, aiGuess);
-  numbersForm.reset();
-
-  console.log(`aiHelpGuess ${aiHelpGuess}`);
-  console.log(`aiGuess ${aiGuess}`);
+    myGuessText.textContent = myGuess;
+    console.log(`aiHelpGuess ${aiHelpGuess}`);
+    console.log(`aiGuess ${aiGuess}`);
+  }
 });
 
 const compare = (arr1, arr2) => {
@@ -95,6 +99,10 @@ const compareAi = (arr1, arr2) => {
     }
   }
 
+  if (bulls2 === 4) {
+    console.log('AiWin');
+  }
+
   result2.textContent = `Ai bulls: ${bulls2} cows: ${cows2}`;
 };
 
@@ -118,8 +126,6 @@ const getAiGuess = () => {
       a = randomNumber();
     }
   }
-
-  aiGuessText.textContent = aiGuess;
 };
 
 getAiNumber = () => {
