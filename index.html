@@ -15,29 +15,31 @@
   <body>
     <div class="main">
       <div id="initialDiv">
+        <p>Choose your number</p>
+
         <div class="numbersForm" id="numbersForm1">
           <div class="numbersFormPart">
-            <button type="button" onclick="clickControl('inc', 0)">+</button>
+            <button type="button" onclick="clickControl('inc', 0, 'choose')">+</button>
             <p class="numbers1">1</p>
-            <button type="button" onclick="clickControl('dec', 0)">-</button>
+            <button type="button" onclick="clickControl('dec', 0, 'choose')">-</button>
           </div>
 
           <div class="numbersFormPart">
-            <button type="button" onclick="clickControl('inc', 1)">+</button>
+            <button type="button" onclick="clickControl('inc', 1, 'choose')">+</button>
             <p class="numbers1">1</p>
-            <button type="button" onclick="clickControl('dec', 1)">-</button>
+            <button type="button" onclick="clickControl('dec', 1, 'choose')">-</button>
           </div>
 
           <div class="numbersFormPart">
-            <button type="button" onclick="clickControl('inc', 2)">+</button>
+            <button type="button" onclick="clickControl('inc', 2, 'choose')">+</button>
             <p class="numbers1">1</p>
-            <button type="button" onclick="clickControl('dec', 2)">-</button>
+            <button type="button" onclick="clickControl('dec', 2, 'choose')">-</button>
           </div>
 
           <div class="numbersFormPart">
-            <button type="button" onclick="clickControl('inc', 3)">+</button>
+            <button type="button" onclick="clickControl('inc', 3, 'choose')">+</button>
             <p class="numbers1">1</p>
-            <button type="button" onclick="clickControl('dec', 3)">-</button>
+            <button type="button" onclick="clickControl('dec', 3, 'choose')">-</button>
           </div>
         </div>
         <button id="submitBtn1" type="submit">Submit</button>
@@ -50,16 +52,33 @@
         <p>AI guess<span id="aiGuessText"></span></p>
         <p id="result"></p>
         <p id="result2"></p>
-        <form id="numbersForm">
-          <button id="b1inc" type="button">+</button>
-          <p id="n1" type="number">0</p>
-          <button id="b1dec" type="button">-</button>
-
-          <input id="n2" type="number" />
-          <input id="n3" type="number" />
-          <input id="n4" type="number" />
-        </form>
-        <button id="submitBtn2" type="submit">Submit</button>
+        <div class="numbersForm" id="numbersForm1">
+            <div class="numbersFormPart">
+              <button type="button" onclick="clickControl('inc', 0, 'guess')">+</button>
+              <p class="numbers2">1</p>
+              <button type="button" onclick="clickControl('dec', 0, 'guess')">-</button>
+            </div>
+  
+            <div class="numbersFormPart">
+              <button type="button" onclick="clickControl('inc', 1, 'guess')">+</button>
+              <p class="numbers2">1</p>
+              <button type="button" onclick="clickControl('dec', 1, 'guess')">-</button>
+            </div>
+  
+            <div class="numbersFormPart">
+              <button type="button" onclick="clickControl('inc', 2, 'guess')">+</button>
+              <p class="numbers2">1</p>
+              <button type="button" onclick="clickControl('dec', 2, 'guess')">-</button>
+            </div>
+  
+            <div class="numbersFormPart">
+              <button type="button" onclick="clickControl('inc', 3, 'guess')">+</button>
+              <p class="numbers2">1</p>
+              <button type="button" onclick="clickControl('dec', 3, 'guess')">-</button>
+            </div>
+          </div>
+          <button id="submitBtn2" type="submit">Submit</button>
+        </div>
       </div>
     </div>
 

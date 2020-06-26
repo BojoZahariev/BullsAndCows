@@ -8,14 +8,15 @@ const myNumberText = document.querySelector('#myNumberText');
 const myGuessText = document.querySelector('#myGuessText');
 const aiGuessText = document.querySelector('#aiGuessText');
 
+//Number boxes
 const numbers1 = document.getElementsByClassName('numbers1');
+const numbers2 = document.getElementsByClassName('numbers2');
 
 const result = document.querySelector('#result');
 const result2 = document.querySelector('#result2');
 
 var aiNum = [];
-var playerNum = [];
-var myGuess = [];
+var myGuess = [1, 1, 1, 1];
 let aiGuess = [
   Math.floor(Math.random() * (9 - 1 + 1)) + 1,
   Math.floor(Math.random() * (9 - 1 + 1)) + 1,
@@ -136,7 +137,6 @@ getAiNumber = () => {
     }
   }
 
-  console.log(`num ${myArray}`);
   return myArray;
 };
 
@@ -154,22 +154,23 @@ const randomNumber = () => {
   return myArray[Math.floor(Math.random() * myArray.length)];
 };
 
-b1inc.addEventListener('click', e => {
-  myNumber[0] += 1;
-  n1.textContent = myNumber[0];
-});
-
-b1dec.addEventListener('click', e => {
-  myNumber[0] -= 1;
-  n1.textContent = myNumber[0];
-});
-
-const clickControl = (act, n) => {
-  if (act === 'inc' && myNumber[n] < 9) {
-    myNumber[n] += 1;
-    Array.from(numbers1)[n].textContent = myNumber[n];
-  } else if (act === 'dec' && myNumber[n] > 1) {
-    myNumber[n] -= 1;
-    Array.from(numbers1)[n].textContent = myNumber[n];
+const clickControl = (act, n, faze) => {
+  if (faze === 'choose') {
+    if (act === 'inc' && myNumber[n] < 9) {
+      myNumber[n] += 1;
+      Array.from(numbers1)[n].textContent = myNumber[n];
+    } else if (act === 'dec' && myNumber[n] > 1) {
+      myNumber[n] -= 1;
+      Array.from(numbers1)[n].textContent = myNumber[n];
+    }
+  } else if (faze === 'guess') {
+    console.log('ding');
+    if (act === 'inc' && myGuess[n] < 9) {
+      myGuess[n] += 1;
+      Array.from(numbers2)[n].textContent = myGuess[n];
+    } else if (act === 'dec' && myGuess[n] > 1) {
+      myGuess[n] -= 1;
+      Array.from(numbers2)[n].textContent = myGuess[n];
+    }
   }
 };
