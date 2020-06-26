@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="main">
-      <div id="initialDiv">
+      <div id="initialDiv" class="containers">
         <p>Choose your number</p>
 
         <div class="numbersForm" id="numbersForm1">
@@ -46,12 +46,11 @@
       </div>
 
       <div id="gameDiv" class="containers">
-        <p>AI number<span id="aiNumberText"></span></p>
-        <p>My number<span id="myNumberText"></span></p>
-        <p>My guess<span id="myGuessText"></span></p>
-        <p>AI guess<span id="aiGuessText"></span></p>
-        <p id="result"></p>
-        <p id="result2"></p>
+       
+          <p>My number<span id="myNumberText"></span></p>
+        
+
+        <p>Make your guess</p>
         <div class="numbersForm" id="numbersForm1">
             <div class="numbersFormPart">
               <button type="button" onclick="clickControl('inc', 0, 'guess')">+</button>
@@ -79,7 +78,26 @@
           </div>
           <button id="submitBtn2" type="submit">Submit</button>
         </div>
+
+        <ul id="playedNumbers"></ul>
       </div>
+
+      <div id="resultsDiv" class="containers">
+          <p>My guess<span id="myGuessText"></span></p>
+          <p id="result"></p>
+
+          <p>AI guess<span id="aiGuessText"></span></p>
+          <p id="result2"></p>
+
+          <button id="submitBtn3" type="submit">Ok</button>
+      </div>
+
+      <div id='winScreen' class="containers">
+
+
+      </div>
+
+      
     </div>
 
     <script src="script.js"></script>

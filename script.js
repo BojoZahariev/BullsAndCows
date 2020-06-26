@@ -1,12 +1,16 @@
 const initialDiv = document.querySelector('#initialDiv');
 const gameDiv = document.querySelector('#gameDiv');
-const numbersForm = document.querySelector('#numbersForm');
+const resultsDiv = document.querySelector('#resultsDiv');
+const winScreen = document.querySelector('#winScreen');
+
 const submitBtn1 = document.querySelector('#submitBtn1');
 const submitBtn2 = document.querySelector('#submitBtn2');
-const aiNumberText = document.querySelector('#aiNumberText');
+const submitBtn3 = document.querySelector('#submitBtn3');
+
 const myNumberText = document.querySelector('#myNumberText');
 const myGuessText = document.querySelector('#myGuessText');
 const aiGuessText = document.querySelector('#aiGuessText');
+const playedNumbers = document.querySelector('#playedNumbers');
 
 //Number boxes
 const numbers1 = document.getElementsByClassName('numbers1');
@@ -33,6 +37,8 @@ var cows = 0;
 var bulls2 = 0;
 var cows2 = 0;
 
+var dif = 'hard';
+
 var n1 = document.querySelector('#n1');
 var n2 = document.querySelector('#n2');
 var n3 = document.querySelector('#n3');
@@ -40,7 +46,6 @@ var n4 = document.querySelector('#n4');
 
 //Duplicate numbers check
 function hasDuplicates(array) {
-  console.log(new Set(array).size !== array.length);
   return new Set(array).size !== array.length;
 }
 
@@ -54,23 +59,33 @@ submitBtn1.addEventListener('click', e => {
 });
 
 submitBtn2.addEventListener('click', e => {
-  //myGuess = [Number(n1.value), Number(n2.value), Number(n3.value), Number(n4.value)];
-
   //Duplicate numbers check
   if (!hasDuplicates(myGuess) && bulls2 !== 4) {
     res();
+
+    result2.textContent = `Ai bulls: ${bulls2} cows: ${cows2}`;
+    gameDiv.style.display = 'none';
+    resultsDiv.style.display = 'block';
+    submitBtn3.style.display = 'none';
     myNumberText.textContent = myNumber;
+    aiGuessText.textContent = '';
     getAiGuess();
     compare(aiNum, myGuess);
     setTimeout(() => {
       compareAi(myNumber, aiGuess);
       aiGuessText.textContent = aiGuess;
+      submitBtn3.style.display = 'block';
     }, 3000);
 
     myGuessText.textContent = myGuess;
     console.log(`aiHelpGuess ${aiHelpGuess}`);
-    console.log(`aiGuess ${aiGuess}`);
   }
+});
+
+submitBtn3.addEventListener('click', e => {
+  gameDiv.style.display = 'block';
+  resultsDiv.style.display = 'none';
+  addNumber(myGuess);
 });
 
 const compare = (arr1, arr2) => {
@@ -86,23 +101,35 @@ const compare = (arr1, arr2) => {
 };
 
 const compareAi = (arr1, arr2) => {
+  var is_same =
+    arr1.length == arr2.length &&
+    arr1.every(function(element, index) {
+      return element === arr2[index];
+    });
+
+  if (is_same) {
+    win('Ai');
+  }
+
   for (i = 0; i < arr2.length; i++) {
     if (arr2[i] === arr1[i]) {
       aiHelpGuess[i] = arr2[i];
       bulls2 += 1;
+      /*
+      if (bulls2 === 4) {
+        console.log('AiWin');
+      }
+      */
     } else if (arr1.indexOf(arr2[i]) !== -1) {
       cows2 += 1;
-    } else if (arr1.indexOf(arr2[i]) === -1) {
+    } else if (arr1.indexOf(arr2[i]) === -1 && dif === 'hard') {
       //remove that number from the array for hard
       //don't for easy
-      myArray.splice(arr2[i], 1);
+      //myArray.splice(myArray.indexOf(arr2[i]), 1);
     }
   }
 
-  if (bulls2 === 4) {
-    console.log('AiWin');
-  }
-
+  console.log(myArray);
   result2.textContent = `Ai bulls: ${bulls2} cows: ${cows2}`;
 };
 
@@ -130,12 +157,12 @@ const getAiGuess = () => {
 
 getAiNumber = () => {
   //Only unique numbers
-  let myArray = [];
+  let numArray = [];
   let ranNum = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
   let i = 0;
   while (i < 4) {
-    if (myArray.indexOf(ranNum) === -1) {
-      myArray.push(ranNum);
+    if (numArray.indexOf(ranNum) === -1) {
+      numArray.push(ranNum);
       ranNum = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
       i++;
     } else {
@@ -143,11 +170,11 @@ getAiNumber = () => {
     }
   }
 
-  return myArray;
+  return numArray;
 };
 
 aiNum = getAiNumber();
-aiNumberText.textContent = aiNum;
+console.log(aiNum);
 
 const res = () => {
   bulls = 0;
@@ -170,7 +197,6 @@ const clickControl = (act, n, faze) => {
       Array.from(numbers1)[n].textContent = myNumber[n];
     }
   } else if (faze === 'guess') {
-    console.log('ding');
     if (act === 'inc' && myGuess[n] < 9) {
       myGuess[n] += 1;
       Array.from(numbers2)[n].textContent = myGuess[n];
@@ -179,4 +205,24 @@ const clickControl = (act, n, faze) => {
       Array.from(numbers2)[n].textContent = myGuess[n];
     }
   }
+};
+
+//Add played number to the list
+const addNumber = n => {
+  let usedNum = document.createElement('li');
+  usedNum.textContent = `${n} b ${bulls} c ${cows}`;
+  playedNumbers.appendChild(usedNum);
+};
+
+const win = winner => {
+  clearScreen();
+  winScreen.style.display = 'block';
+  winScreen.textContent = `${winner} wins ${aiGuess}`;
+};
+
+const clearScreen = () => {
+  let containers = document.getElementsByClassName('containers');
+  Array.from(containers).forEach(element => {
+    element.style.display = 'none';
+  });
 };

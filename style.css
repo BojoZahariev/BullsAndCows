@@ -1,4 +1,6 @@
-#gameDiv {
+#gameDiv,
+#resultsDiv,
+#submitBtn3 {
   display: none;
 }
 
