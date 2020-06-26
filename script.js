@@ -30,14 +30,11 @@ let aiGuess = [
 
 var aiHelpGuess = ['', '', '', ''];
 var myNumber = [1, 1, 1, 1];
-var myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 var bulls = 0;
 var cows = 0;
 var bulls2 = 0;
 var cows2 = 0;
-
-var dif = 'hard';
 
 var n1 = document.querySelector('#n1');
 var n2 = document.querySelector('#n2');
@@ -67,6 +64,7 @@ submitBtn2.addEventListener('click', e => {
     gameDiv.style.display = 'none';
     resultsDiv.style.display = 'block';
     submitBtn3.style.display = 'none';
+    playedNumbers.style.display = 'none';
     myNumberText.textContent = myNumber;
     aiGuessText.textContent = '';
     getAiGuess();
@@ -86,6 +84,7 @@ submitBtn3.addEventListener('click', e => {
   gameDiv.style.display = 'block';
   resultsDiv.style.display = 'none';
   addNumber(myGuess);
+  playedNumbers.style.display = 'block';
 });
 
 const compare = (arr1, arr2) => {
@@ -101,6 +100,7 @@ const compare = (arr1, arr2) => {
 };
 
 const compareAi = (arr1, arr2) => {
+  /*
   var is_same =
     arr1.length == arr2.length &&
     arr1.every(function(element, index) {
@@ -110,26 +110,20 @@ const compareAi = (arr1, arr2) => {
   if (is_same) {
     win('Ai');
   }
-
+*/
   for (i = 0; i < arr2.length; i++) {
     if (arr2[i] === arr1[i]) {
       aiHelpGuess[i] = arr2[i];
       bulls2 += 1;
-      /*
-      if (bulls2 === 4) {
-        console.log('AiWin');
-      }
-      */
     } else if (arr1.indexOf(arr2[i]) !== -1) {
       cows2 += 1;
-    } else if (arr1.indexOf(arr2[i]) === -1 && dif === 'hard') {
-      //remove that number from the array for hard
-      //don't for easy
-      //myArray.splice(myArray.indexOf(arr2[i]), 1);
     }
   }
 
-  console.log(myArray);
+  if (bulls2 === 4) {
+    win('Ai');
+  }
+
   result2.textContent = `Ai bulls: ${bulls2} cows: ${cows2}`;
 };
 
@@ -141,16 +135,16 @@ const getAiGuess = () => {
   }
 
   let i = 0;
-  let a = randomNumber();
+  let a = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
   while (i < aiGuess.length) {
     if (aiGuess.indexOf(a) === -1) {
       if (aiGuess[i] !== aiHelpGuess[i]) {
         aiGuess[i] = a;
-        a = randomNumber();
+        a = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
       }
       i++;
     } else {
-      a = randomNumber();
+      a = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
     }
   }
 };
@@ -181,10 +175,6 @@ const res = () => {
   cows = 0;
   bulls2 = 0;
   cows2 = 0;
-};
-
-const randomNumber = () => {
-  return myArray[Math.floor(Math.random() * myArray.length)];
 };
 
 const clickControl = (act, n, faze) => {
