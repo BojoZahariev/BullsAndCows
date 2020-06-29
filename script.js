@@ -31,17 +31,12 @@ var cows = 0;
 var bulls2 = 0;
 var cows2 = 0;
 
-var n1 = document.querySelector('#n1');
-var n2 = document.querySelector('#n2');
-var n3 = document.querySelector('#n3');
-var n4 = document.querySelector('#n4');
-
 //Duplicate numbers check
 function hasDuplicates(array) {
   return new Set(array).size !== array.length;
 }
 
-submitBtn1.addEventListener('click', e => {
+submitBtn1.addEventListener('click', (e) => {
   //Duplicate numbers check
   if (!hasDuplicates(myNumber)) {
     initialDiv.style.display = 'none';
@@ -50,7 +45,7 @@ submitBtn1.addEventListener('click', e => {
   }
 });
 
-submitBtn2.addEventListener('click', e => {
+submitBtn2.addEventListener('click', (e) => {
   //Duplicate numbers check
   if (!hasDuplicates(myGuess) && bulls2 !== 4) {
     res();
@@ -75,7 +70,7 @@ submitBtn2.addEventListener('click', e => {
   }
 });
 
-submitBtn3.addEventListener('click', e => {
+submitBtn3.addEventListener('click', (e) => {
   gameDiv.style.display = 'block';
   resultsDiv.style.display = 'none';
   addNumber(myGuess);
@@ -186,7 +181,7 @@ const clickControl = (act, n, faze) => {
 };
 
 //Add played number to the list
-const addNumber = n => {
+const addNumber = (n) => {
   let usedNum = document.createElement('li');
   usedNum.textContent = `${n} b ${bulls} c ${cows}`;
   playedNumbers.appendChild(usedNum);
@@ -200,7 +195,7 @@ const win = (winner, score) => {
 
 const clearScreen = () => {
   let containers = document.getElementsByClassName('containers');
-  Array.from(containers).forEach(element => {
+  Array.from(containers).forEach((element) => {
     element.style.display = 'none';
   });
 };
