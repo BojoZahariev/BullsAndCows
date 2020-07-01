@@ -1,4 +1,5 @@
 const initialDiv = document.querySelector('#initialDiv');
+const startBtn = document.querySelector('#startBtn');
 const gameDiv = document.querySelector('#gameDiv');
 const resultsDiv = document.querySelector('#resultsDiv');
 const winScreen = document.querySelector('#winScreen');
