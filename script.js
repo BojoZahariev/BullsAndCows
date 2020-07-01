@@ -32,6 +32,11 @@ var cows = 0;
 var bulls2 = 0;
 var cows2 = 0;
 
+startBtn.addEventListener('click', (e) => {
+  clearScreen();
+  gameDiv.style.display = 'block';
+});
+
 //Duplicate numbers check
 function hasDuplicates(array) {
   return new Set(array).size !== array.length;
