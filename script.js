@@ -34,7 +34,7 @@ var cows2 = 0;
 
 startBtn.addEventListener('click', (e) => {
   clearScreen();
-  gameDiv.style.display = 'block';
+  initialDiv.style.display = 'block';
 });
 
 //Duplicate numbers check
@@ -45,7 +45,7 @@ function hasDuplicates(array) {
 submitBtn1.addEventListener('click', (e) => {
   //Duplicate numbers check
   if (!hasDuplicates(myNumber)) {
-    initialDiv.style.display = 'none';
+    clearScreen();
     gameDiv.style.display = 'block';
     myNumberText.textContent = myNumber;
   }
