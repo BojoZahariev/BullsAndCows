@@ -57,7 +57,7 @@ submitBtn2.addEventListener('click', (e) => {
     res();
 
     result2.textContent = `Ai bulls: ${bulls2} cows: ${cows2}`;
-    gameDiv.style.display = 'none';
+    clearScreen();
     resultsDiv.style.display = 'block';
     submitBtn3.style.display = 'none';
     playedNumbers.style.display = 'none';
