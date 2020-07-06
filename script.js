@@ -3,6 +3,8 @@ const startBtn = document.querySelector('#startBtn');
 const gameDiv = document.querySelector('#gameDiv');
 const resultsDiv = document.querySelector('#resultsDiv');
 const winScreen = document.querySelector('#winScreen');
+const bubble = document.querySelector('#bubble');
+const bubbleText = document.querySelector('#bubbleText');
 
 const submitBtn1 = document.querySelector('#submitBtn1');
 const submitBtn2 = document.querySelector('#submitBtn2');
@@ -32,9 +34,11 @@ var cows = 0;
 var bulls2 = 0;
 var cows2 = 0;
 
-startBtn.addEventListener('click', (e) => {
+startBtn.addEventListener('click', e => {
   clearScreen();
   initialDiv.style.display = 'block';
+  bubble.style.display = 'block';
+  bubbleText.textContent = "Choose your number, but don't tell me what it is";
 });
 
 //Duplicate numbers check
@@ -42,7 +46,7 @@ function hasDuplicates(array) {
   return new Set(array).size !== array.length;
 }
 
-submitBtn1.addEventListener('click', (e) => {
+submitBtn1.addEventListener('click', e => {
   //Duplicate numbers check
   if (!hasDuplicates(myNumber)) {
     clearScreen();
@@ -51,7 +55,7 @@ submitBtn1.addEventListener('click', (e) => {
   }
 });
 
-submitBtn2.addEventListener('click', (e) => {
+submitBtn2.addEventListener('click', e => {
   //Duplicate numbers check
   if (!hasDuplicates(myGuess) && bulls2 !== 4) {
     res();
@@ -76,7 +80,7 @@ submitBtn2.addEventListener('click', (e) => {
   }
 });
 
-submitBtn3.addEventListener('click', (e) => {
+submitBtn3.addEventListener('click', e => {
   gameDiv.style.display = 'block';
   resultsDiv.style.display = 'none';
   addNumber(myGuess);
@@ -187,7 +191,7 @@ const clickControl = (act, n, faze) => {
 };
 
 //Add played number to the list
-const addNumber = (n) => {
+const addNumber = n => {
   let usedNum = document.createElement('li');
   usedNum.textContent = `${n} b ${bulls} c ${cows}`;
   playedNumbers.appendChild(usedNum);
@@ -201,7 +205,7 @@ const win = (winner, score) => {
 
 const clearScreen = () => {
   let containers = document.getElementsByClassName('containers');
-  Array.from(containers).forEach((element) => {
+  Array.from(containers).forEach(element => {
     element.style.display = 'none';
   });
 };
