@@ -12,7 +12,7 @@ const submitBtn3 = document.querySelector('#submitBtn3');
 
 const myNumberText = document.querySelector('#myNumberText');
 const myGuessText = document.querySelector('#myGuessText');
-const aiGuessText = document.querySelector('#aiGuessText');
+
 const playedNumbers = document.querySelector('#playedNumbers');
 
 //Number boxes
@@ -20,7 +20,6 @@ const numbers1 = document.getElementsByClassName('numbers1');
 const numbers2 = document.getElementsByClassName('numbers2');
 
 const result = document.querySelector('#result');
-const result2 = document.querySelector('#result2');
 
 var aiNum = [];
 var myGuess = [1, 1, 1, 1];
@@ -56,6 +55,9 @@ submitBtn1.addEventListener('click', e => {
     myNumberText.textContent = myNumber;
   } else {
     bubbleText.textContent = 'Every digit has to be different.';
+    setTimeout(() => {
+      bubbleText.textContent = 'Choose your number.';
+    }, 2000);
   }
 });
 
@@ -64,31 +66,35 @@ submitBtn2.addEventListener('click', e => {
   if (!hasDuplicates(myGuess) && bulls2 !== 4) {
     res();
 
-    result2.textContent = `Ai bulls: ${bulls2} cows: ${cows2}`;
     clearScreen();
     resultsDiv.style.display = 'block';
     submitBtn3.style.display = 'none';
     playedNumbers.style.display = 'none';
     myNumberText.textContent = myNumber;
-    aiGuessText.textContent = '';
+
     getAiGuess();
     compare(aiNum, myGuess);
     setTimeout(() => {
       compareAi(myNumber, aiGuess);
-      aiGuessText.textContent = aiGuess;
+      bubble.style.display = 'block';
+      bubbleText.textContent = `I say ${aiGuess}`;
       submitBtn3.style.display = 'block';
     }, 3000);
 
     myGuessText.textContent = myGuess;
-    console.log(`aiHelpGuess ${aiHelpGuess}`);
   } else {
     bubbleText.textContent = 'Every digit has to be different.';
+    setTimeout(() => {
+      bubbleText.textContent = 'Make a guess';
+    }, 2000);
   }
 });
 
 submitBtn3.addEventListener('click', e => {
   gameDiv.style.display = 'block';
   resultsDiv.style.display = 'none';
+  bubble.style.display = 'block';
+  bubbleText.textContent = 'Make a guess';
   addNumber(myGuess);
   playedNumbers.style.display = 'block';
 });
@@ -103,7 +109,7 @@ const compare = (arr1, arr2) => {
   }
 
   if (bulls === 4) {
-    win('You', myGuess);
+    win('You');
   }
 
   result.textContent = `bulls: ${bulls} cows: ${cows}`;
@@ -120,10 +126,8 @@ const compareAi = (arr1, arr2) => {
   }
 
   if (bulls2 === 4) {
-    win('Ai', aiGuess);
+    win('Ai');
   }
-
-  result2.textContent = `Ai bulls: ${bulls2} cows: ${cows2}`;
 };
 
 const getAiGuess = () => {
@@ -203,10 +207,10 @@ const addNumber = n => {
   playedNumbers.appendChild(usedNum);
 };
 
-const win = (winner, score) => {
+const win = winner => {
   clearScreen();
   winScreen.style.display = 'block';
-  winScreen.textContent = `${winner} win ${score}`;
+  winScreen.textContent = `${winner} win!`;
 };
 
 const clearScreen = () => {
