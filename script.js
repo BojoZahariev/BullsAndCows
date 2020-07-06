@@ -51,7 +51,11 @@ submitBtn1.addEventListener('click', e => {
   if (!hasDuplicates(myNumber)) {
     clearScreen();
     gameDiv.style.display = 'block';
+    bubble.style.display = 'block';
+    bubbleText.textContent = 'Make a guess';
     myNumberText.textContent = myNumber;
+  } else {
+    bubbleText.textContent = 'Every digit has to be different.';
   }
 });
 
@@ -77,6 +81,8 @@ submitBtn2.addEventListener('click', e => {
 
     myGuessText.textContent = myGuess;
     console.log(`aiHelpGuess ${aiHelpGuess}`);
+  } else {
+    bubbleText.textContent = 'Every digit has to be different.';
   }
 });
 
