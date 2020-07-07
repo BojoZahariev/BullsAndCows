@@ -9,13 +9,35 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: bottom;
-  background-color: aquamarine;
+  background-color: #d8f1a0;
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+}
+
+.containers {
+  width: 50%;
+  height: 300px;
+  margin: auto;
+  background-color: #00a878;
+}
+
+#bubble {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 100px;
+  height: 100px;
 }
 
 #initialDiv,
 #gameDiv,
 #resultsDiv,
-#submitBtn3 {
+#submitBtn3,
+#bubble,
+#winScreen {
   display: none;
   padding: 10px;
 }
