@@ -4,11 +4,17 @@
   box-sizing: border-box;
 }
 
+body {
+  background-image: url(images/farm.png);
+  background-size: cover;
+}
+
 #initialDiv,
 #gameDiv,
 #resultsDiv,
 #submitBtn3 {
   display: none;
+  padding: 10px;
 }
 
 .numbersForm {
