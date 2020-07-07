@@ -36,7 +36,7 @@ var cows2 = 0;
 startBtn.addEventListener('click', e => {
   clearScreen();
   initialDiv.style.display = 'block';
-  bubble.style.display = 'block';
+
   bubbleText.textContent = "Choose your number, but don't tell me what it is";
 });
 
@@ -50,7 +50,7 @@ submitBtn1.addEventListener('click', e => {
   if (!hasDuplicates(myNumber)) {
     clearScreen();
     gameDiv.style.display = 'block';
-    bubble.style.display = 'block';
+
     bubbleText.textContent = 'Make a guess';
     myNumberText.textContent = myNumber;
   } else {
@@ -76,7 +76,7 @@ submitBtn2.addEventListener('click', e => {
     compare(aiNum, myGuess);
     setTimeout(() => {
       compareAi(myNumber, aiGuess);
-      bubble.style.display = 'block';
+
       bubbleText.textContent = `I say ${aiGuess}`;
       submitBtn3.style.display = 'block';
     }, 3000);
@@ -93,7 +93,7 @@ submitBtn2.addEventListener('click', e => {
 submitBtn3.addEventListener('click', e => {
   gameDiv.style.display = 'block';
   resultsDiv.style.display = 'none';
-  bubble.style.display = 'block';
+
   bubbleText.textContent = 'Make a guess';
   addNumber(myGuess);
   playedNumbers.style.display = 'block';
