@@ -26,6 +26,7 @@ body {
   margin: auto;
   background-color: #00a878;
   position: relative;
+  border: 2px solid #230007;
 }
 
 .title {
@@ -38,6 +39,7 @@ body {
   text-align: center;
   font-family: 'Fredericka the Great', cursive;
   font-size: 65px;
+  color: #230007;
 }
 
 .btns {
@@ -51,7 +53,7 @@ body {
 
 #cow {
   position: absolute;
-  right: -100px;
+  right: -150px;
   bottom: -200px;
   z-index: 99;
 }
@@ -82,6 +84,7 @@ body {
   color: #230007;
   font-size: 20px;
   font-family: 'Pangolin', cursive;
+  opacity: 0.8;
 }
 
 #angryCow {
