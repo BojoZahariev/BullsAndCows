@@ -18,12 +18,15 @@ body {
   height: 100vh;
 }
 
-.containers {
-  width: 60%;
+.mainContainer {
+  width: 800px;
   height: 400px;
   margin: auto;
   background-color: #00a878;
   position: relative;
+}
+
+.containers {
 }
 
 .title {
@@ -38,6 +41,17 @@ body {
   right: 0;
   margin: auto;
   text-align: center;
+}
+
+#cow {
+  position: absolute;
+  right: -50px;
+  bottom: -100px;
+  z-index: 999;
+}
+
+#cowImg {
+  width: 250px;
 }
 
 #bubble {

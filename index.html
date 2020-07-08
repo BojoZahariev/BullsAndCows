@@ -14,95 +14,97 @@
   </head>
   <body>
     <div class="main">
-      <!--
+      <div class="mainContainer">
+        <!--
         <div id="bubble" class="containers">
             <p id="bubbleText">Want to play?</p>
           </div>
           -->
-      <div id="cow">
-        <p id="bubbleText">Want to play?</p>
-        <img id="cowImg" src="images/cow1.png" alt="cow" />
-      </div>
-
-      <div id="hero" class="containers">
-        <p class="title">Bulls And Cows</p>
-
-        <div class="btns">
-          <button id="howToBtn">How to play</button>
-          <button id="startBtn">START</button>
+        <div id="cow">
+          <p id="bubbleText">Want to play?</p>
+          <img id="cowImg" src="images/cow1.png" alt="cow" />
         </div>
-      </div>
 
-      <div id="initialDiv" class="containers">
-        <div class="numbersForm" id="numbersForm1">
-          <div class="numbersFormPart">
-            <button type="button" onclick="clickControl('inc', 0, 'choose')">+</button>
-            <p class="numbers1">1</p>
-            <button type="button" onclick="clickControl('dec', 0, 'choose')">-</button>
-          </div>
+        <div id="hero" class="containers">
+          <p class="title">Bulls And Cows</p>
 
-          <div class="numbersFormPart">
-            <button type="button" onclick="clickControl('inc', 1, 'choose')">+</button>
-            <p class="numbers1">1</p>
-            <button type="button" onclick="clickControl('dec', 1, 'choose')">-</button>
-          </div>
-
-          <div class="numbersFormPart">
-            <button type="button" onclick="clickControl('inc', 2, 'choose')">+</button>
-            <p class="numbers1">1</p>
-            <button type="button" onclick="clickControl('dec', 2, 'choose')">-</button>
-          </div>
-
-          <div class="numbersFormPart">
-            <button type="button" onclick="clickControl('inc', 3, 'choose')">+</button>
-            <p class="numbers1">1</p>
-            <button type="button" onclick="clickControl('dec', 3, 'choose')">-</button>
-          </div>
-        </div>
-        <button id="submitBtn1" type="submit">Submit</button>
-      </div>
-
-      <div id="gameDiv" class="containers">
-        <p>My number<span id="myNumberText"></span></p>
-
-        <div class="numbersForm" id="numbersForm1">
-          <div class="numbersFormPart">
-            <button type="button" onclick="clickControl('inc', 0, 'guess')">+</button>
-            <p class="numbers2">1</p>
-            <button type="button" onclick="clickControl('dec', 0, 'guess')">-</button>
-          </div>
-
-          <div class="numbersFormPart">
-            <button type="button" onclick="clickControl('inc', 1, 'guess')">+</button>
-            <p class="numbers2">1</p>
-            <button type="button" onclick="clickControl('dec', 1, 'guess')">-</button>
-          </div>
-
-          <div class="numbersFormPart">
-            <button type="button" onclick="clickControl('inc', 2, 'guess')">+</button>
-            <p class="numbers2">1</p>
-            <button type="button" onclick="clickControl('dec', 2, 'guess')">-</button>
-          </div>
-
-          <div class="numbersFormPart">
-            <button type="button" onclick="clickControl('inc', 3, 'guess')">+</button>
-            <p class="numbers2">1</p>
-            <button type="button" onclick="clickControl('dec', 3, 'guess')">-</button>
+          <div class="btns">
+            <button id="howToBtn">How to play</button>
+            <button id="startBtn">START</button>
           </div>
         </div>
 
-        <button id="submitBtn2" type="submit">Submit</button>
+        <div id="initialDiv" class="containers">
+          <div class="numbersForm" id="numbersForm1">
+            <div class="numbersFormPart">
+              <button type="button" onclick="clickControl('inc', 0, 'choose')">+</button>
+              <p class="numbers1">1</p>
+              <button type="button" onclick="clickControl('dec', 0, 'choose')">-</button>
+            </div>
 
-        <ul id="playedNumbers"></ul>
+            <div class="numbersFormPart">
+              <button type="button" onclick="clickControl('inc', 1, 'choose')">+</button>
+              <p class="numbers1">1</p>
+              <button type="button" onclick="clickControl('dec', 1, 'choose')">-</button>
+            </div>
+
+            <div class="numbersFormPart">
+              <button type="button" onclick="clickControl('inc', 2, 'choose')">+</button>
+              <p class="numbers1">1</p>
+              <button type="button" onclick="clickControl('dec', 2, 'choose')">-</button>
+            </div>
+
+            <div class="numbersFormPart">
+              <button type="button" onclick="clickControl('inc', 3, 'choose')">+</button>
+              <p class="numbers1">1</p>
+              <button type="button" onclick="clickControl('dec', 3, 'choose')">-</button>
+            </div>
+          </div>
+          <button id="submitBtn1" type="submit">Submit</button>
+        </div>
+
+        <div id="gameDiv" class="containers">
+          <p>My number<span id="myNumberText"></span></p>
+
+          <div class="numbersForm" id="numbersForm1">
+            <div class="numbersFormPart">
+              <button type="button" onclick="clickControl('inc', 0, 'guess')">+</button>
+              <p class="numbers2">1</p>
+              <button type="button" onclick="clickControl('dec', 0, 'guess')">-</button>
+            </div>
+
+            <div class="numbersFormPart">
+              <button type="button" onclick="clickControl('inc', 1, 'guess')">+</button>
+              <p class="numbers2">1</p>
+              <button type="button" onclick="clickControl('dec', 1, 'guess')">-</button>
+            </div>
+
+            <div class="numbersFormPart">
+              <button type="button" onclick="clickControl('inc', 2, 'guess')">+</button>
+              <p class="numbers2">1</p>
+              <button type="button" onclick="clickControl('dec', 2, 'guess')">-</button>
+            </div>
+
+            <div class="numbersFormPart">
+              <button type="button" onclick="clickControl('inc', 3, 'guess')">+</button>
+              <p class="numbers2">1</p>
+              <button type="button" onclick="clickControl('dec', 3, 'guess')">-</button>
+            </div>
+          </div>
+
+          <button id="submitBtn2" type="submit">Submit</button>
+
+          <ul id="playedNumbers"></ul>
+        </div>
+
+        <div id="resultsDiv" class="containers">
+          <p>My guess<span id="myGuessText"></span></p>
+          <p id="result"></p>
+          <button id="submitBtn3" type="submit">Ok</button>
+        </div>
+
+        <div id="winScreen" class="containers"></div>
       </div>
-
-      <div id="resultsDiv" class="containers">
-        <p>My guess<span id="myGuessText"></span></p>
-        <p id="result"></p>
-        <button id="submitBtn3" type="submit">Ok</button>
-      </div>
-
-      <div id="winScreen" class="containers"></div>
     </div>
 
     <script src="script.js"></script>
