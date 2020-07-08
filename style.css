@@ -13,6 +13,7 @@ body {
 }
 
 .main {
+  position: relative;
   display: flex;
   height: 100vh;
 }
@@ -26,10 +27,12 @@ body {
   position: relative;
 }
 
-.containers {
-}
-
 .title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10vh;
+  margin: auto;
   font-size: 35px;
   text-align: center;
 }
@@ -62,6 +65,8 @@ body {
 
 #bubble {
   width: 100%;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 #bubbleText {
@@ -69,7 +74,7 @@ body {
   top: 70px;
   z-index: 9;
   width: 100%;
-  padding: 0px 10px 0px 20px;
+  padding: 0px 30px;
 
   text-align: center;
 }
