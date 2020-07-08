@@ -5,6 +5,7 @@ const resultsDiv = document.querySelector('#resultsDiv');
 const winScreen = document.querySelector('#winScreen');
 const bubble = document.querySelector('#bubble');
 const bubbleText = document.querySelector('#bubbleText');
+const angryCow = document.querySelector('#angryCow');
 
 const submitBtn1 = document.querySelector('#submitBtn1');
 const submitBtn2 = document.querySelector('#submitBtn2');
@@ -54,7 +55,7 @@ submitBtn1.addEventListener('click', e => {
     bubbleText.textContent = 'Make a guess';
     myNumberText.textContent = myNumber;
   } else {
-    bubbleText.textContent = 'Every digit has to be different.';
+    TellOf();
     setTimeout(() => {
       bubbleText.textContent = 'Choose your number.';
     }, 2000);
@@ -83,7 +84,8 @@ submitBtn2.addEventListener('click', e => {
 
     myGuessText.textContent = myGuess;
   } else {
-    bubbleText.textContent = 'Every digit has to be different.';
+    TellOf();
+
     setTimeout(() => {
       bubbleText.textContent = 'Make a guess';
     }, 2000);
@@ -218,4 +220,10 @@ const clearScreen = () => {
   Array.from(containers).forEach(element => {
     element.style.display = 'none';
   });
+};
+
+const TellOf = () => {
+  bubbleText.textContent = 'Every digit has to be different.';
+
+  angryCow.classList.toggle('animatedCow');
 };
