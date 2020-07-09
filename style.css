@@ -169,6 +169,15 @@ ul {
   padding: 10px;
 }
 
+.numbersForm {
+  display: flex;
+  justify-content: center;
+}
+
+.numbersFormPart {
+  margin: 20px;
+}
+
 .plusBtn {
   outline: none;
   border: none;
@@ -179,7 +188,8 @@ ul {
   cursor: pointer;
 }
 
-.numbers1 {
+.numbers1,
+.numbers2 {
   text-align: center;
   font-family: 'Pangolin', cursive;
   font-size: 40px;
@@ -187,9 +197,4 @@ ul {
 }
 
 .numbersForm {
-  display: flex;
-}
-
-.numbersFormPart {
-  margin: 10px;
 }
