@@ -57,18 +57,18 @@ ul {
 
 .btns {
   display: block;
-  border: 2px solid #f3c178;
+  border: 2px solid #d8f1a0;
   padding: 10px 30px;
   border-radius: 20px;
-  background-color: #fe5e41;
+  background-color: #f3c178;
   color: #230007;
   font-family: 'Pangolin', cursive;
   font-size: 25px;
   background-size: 200% auto;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-  background-image: linear-gradient(to right, #fe5e41 0%, #f3c178 50%, #fe5e41 100%);
+  background-image: linear-gradient(to right, #f3c178 0%, #d8f1a0 50%, #f3c178 100%);
   transition: 0.5s;
-  margin: 0px auto 20px auto;
+  margin: 20px auto;
   width: 200px;
   cursor: pointer;
 }
@@ -90,6 +90,10 @@ ul {
 
 .instructionsText {
   font-size: 20px;
+  padding: 5px;
+}
+
+.instructionsList {
 }
 
 #cow {
