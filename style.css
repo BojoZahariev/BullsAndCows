@@ -57,7 +57,7 @@ ul {
 
 .btns {
   display: block;
-  border: 2px solid #d8f1a0;
+  border: 2px solid #230007;
   padding: 10px 30px;
   border-radius: 20px;
   background-color: #f3c178;
@@ -86,20 +86,19 @@ ul {
 #instructions {
   font-family: 'Pangolin', cursive;
   letter-spacing: 0.5px;
+  color: #230007;
 }
 
 .instructionsText {
   font-size: 20px;
   padding: 5px;
-}
-
-.instructionsList {
+  color: #230007;
 }
 
 #cow {
   position: absolute;
   right: -150px;
-  bottom: -200px;
+  bottom: -100px;
   z-index: 99;
 }
 
