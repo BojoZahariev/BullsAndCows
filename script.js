@@ -1,5 +1,8 @@
 const initialDiv = document.querySelector('#initialDiv');
 const startBtn = document.querySelector('#startBtn');
+const howToBtn = document.querySelector('#howToBtn');
+const playBtn = document.querySelector('#playBtn');
+const instructions = document.querySelector('#instructions');
 const gameDiv = document.querySelector('#gameDiv');
 const resultsDiv = document.querySelector('#resultsDiv');
 const winScreen = document.querySelector('#winScreen');
@@ -35,6 +38,20 @@ var bulls2 = 0;
 var cows2 = 0;
 
 startBtn.addEventListener('click', e => {
+  clearScreen();
+  initialDiv.style.display = 'block';
+
+  bubbleText.textContent = "Choose your number, but don't tell me what it is";
+});
+
+howToBtn.addEventListener('click', e => {
+  clearScreen();
+  instructions.style.display = 'block';
+
+  bubbleText.textContent = "It's easy.";
+});
+
+playBtn.addEventListener('click', e => {
   clearScreen();
   initialDiv.style.display = 'block';
 
