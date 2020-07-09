@@ -42,13 +42,40 @@ body {
   color: #230007;
 }
 
-.btns {
+.btnsDiv {
   position: absolute;
-  bottom: 0;
   left: 0;
   right: 0;
+  top: 30%;
   margin: auto;
   text-align: center;
+}
+
+.btns {
+  display: block;
+  border: 2px solid #f3c178;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: #fe5e41;
+  color: #230007;
+  font-family: 'Pangolin', cursive;
+  font-size: 25px;
+  background-size: 200% auto;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background-image: linear-gradient(to right, #fe5e41 0%, #f3c178 50%, #fe5e41 100%);
+  transition: 0.5s;
+  margin: 0px auto 20px auto;
+  width: 200px;
+}
+
+.btns:hover {
+  background-position: right center;
+}
+
+#howToBtn {
+  font-size: 20px;
+  width: 180px;
+  padding: 10px;
 }
 
 #cow {
@@ -101,7 +128,6 @@ body {
   animation-duration: 4s;
 
   animation-fill-mode: forwards;
-  animation-timing-function: ease-in;
 }
 
 @keyframes pop {
