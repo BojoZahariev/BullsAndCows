@@ -75,7 +75,7 @@ submitBtn1.addEventListener('click', e => {
     TellOf();
     setTimeout(() => {
       bubbleText.textContent = 'Choose your number.';
-    }, 2000);
+    }, 3000);
   }
 });
 
@@ -105,7 +105,7 @@ submitBtn2.addEventListener('click', e => {
 
     setTimeout(() => {
       bubbleText.textContent = 'Make a guess';
-    }, 2000);
+    }, 3000);
   }
 });
 

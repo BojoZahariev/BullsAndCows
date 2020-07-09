@@ -169,6 +169,23 @@ ul {
   padding: 10px;
 }
 
+.plusBtn {
+  outline: none;
+  border: none;
+  background: none;
+  color: #230007;
+  font-family: 'Pangolin', cursive;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.numbers1 {
+  text-align: center;
+  font-family: 'Pangolin', cursive;
+  font-size: 40px;
+  color: #f3c178;
+}
+
 .numbersForm {
   display: flex;
 }
