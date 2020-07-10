@@ -133,8 +133,8 @@ ul {
 
 #angryCow {
   position: absolute;
-  bottom: -50%;
-  left: -50%;
+  bottom: -50px;
+  left: -100%;
   -webkit-transform: scaleX(-1) rotate(5deg);
   transform: scaleX(-1) rotate(-10deg);
   z-index: 999;
@@ -142,20 +142,19 @@ ul {
 
 .animatedCow {
   animation-name: pop;
-  animation-duration: 4s;
+  animation-duration: 5s;
 
   animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
 }
 
 @keyframes pop {
   20% {
-    bottom: -50px;
     left: -90px;
   }
 
   100% {
-    bottom: -450px;
-    left: -290px;
+    left: -100%;
   }
 }
 
