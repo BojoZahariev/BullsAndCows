@@ -85,8 +85,9 @@ submitBtn2.addEventListener('click', e => {
     res();
 
     clearScreen();
-    resultsDiv.style.display = 'block';
-    submitBtn3.style.display = 'none';
+    bubbleText.textContent = 'Not bad.';
+    resultsDiv.style.display = 'flex';
+    submitBtn3.style.visibility = 'hidden';
     playedNumbers.style.display = 'none';
     myNumberText.textContent = myNumber;
 
@@ -96,7 +97,7 @@ submitBtn2.addEventListener('click', e => {
       compareAi(myNumber, aiGuess);
 
       bubbleText.textContent = `I say ${aiGuess}`;
-      submitBtn3.style.display = 'block';
+      submitBtn3.style.visibility = 'visible';
     }, 3000);
 
     myGuessText.textContent = myGuess;
