@@ -89,18 +89,21 @@ submitBtn2.addEventListener('click', e => {
     resultsDiv.style.display = 'flex';
     submitBtn3.style.visibility = 'hidden';
     playedNumbers.style.display = 'none';
-    myNumberText.textContent = myNumber;
+    myNumberText.textContent = myNumber.join(' ');
 
     getAiGuess();
     compare(aiNum, myGuess);
-    setTimeout(() => {
-      compareAi(myNumber, aiGuess);
 
-      bubbleText.textContent = `I say ${aiGuess}`;
-      submitBtn3.style.visibility = 'visible';
-    }, 3000);
+    if (bulls < 4) {
+      setTimeout(() => {
+        compareAi(myNumber, aiGuess);
 
-    myGuessText.textContent = myGuess;
+        bubbleText.textContent = `My guess is ${aiGuess.join(' ')}`;
+        submitBtn3.style.visibility = 'visible';
+      }, 3000);
+
+      myGuessText.textContent = myGuess.join(' ');
+    }
   } else {
     TellOf();
 
@@ -131,27 +134,26 @@ const compare = (arr1, arr2) => {
   if (bulls === 4) {
     win('You');
   } else if (bulls > 0 || cows > 0) {
-    bullsAndCows();
+    //empty result first
+    result.innerHTML = '';
+    bullsAndCows(result);
   }
-
-  //result.textContent = `bulls: ${bulls} cows: ${cows}`;
 };
 
-const bullsAndCows = () => {
-  //empty result first
-  result.innerHTML = '';
+//display Bulls and Cows
+const bullsAndCows = parent => {
   for (let index = 0; index < bulls; index++) {
     let bull = document.createElement('img');
     bull.src = 'images/bull.png';
     bull.classList.add('bulls');
-    result.appendChild(bull);
+    parent.appendChild(bull);
   }
 
   for (let index = 0; index < cows; index++) {
     let cow = document.createElement('img');
     cow.src = 'images/cow.png';
     cow.classList.add('bulls');
-    result.appendChild(cow);
+    parent.appendChild(cow);
   }
 };
 
@@ -243,13 +245,16 @@ const clickControl = (act, n, faze) => {
 //Add played number to the list
 const addNumber = n => {
   let usedNum = document.createElement('li');
-  usedNum.textContent = `${n} b ${bulls} c ${cows}`;
+  usedNum.classList.add('playedNumber');
+  usedNum.textContent = n.join(' ');
+  bullsAndCows(usedNum);
   playedNumbers.appendChild(usedNum);
 };
 
 const win = winner => {
   clearScreen();
   winScreen.style.display = 'block';
+  bubbleText.textContent = 'Nooooo!';
   winScreen.textContent = `${winner} win!`;
 };
 
