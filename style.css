@@ -71,6 +71,7 @@ ul {
   margin: 20px auto;
   width: 200px;
   cursor: pointer;
+  outline: none;
 }
 
 .btns:hover {
@@ -83,6 +84,11 @@ ul {
   padding: 10px;
 }
 
+#submitBtn1:active,
+#submitBtn2:active {
+  transform: translateY(5px);
+}
+
 #instructions {
   font-family: 'Pangolin', cursive;
   letter-spacing: 0.5px;
@@ -93,6 +99,7 @@ ul {
   font-size: 20px;
   padding: 5px;
   color: #230007;
+  font-family: 'Pangolin', cursive;
 }
 
 #cow {
@@ -185,6 +192,7 @@ ul {
   font-family: 'Pangolin', cursive;
   font-size: 40px;
   cursor: pointer;
+  user-select: none;
 }
 
 .numbers1,
@@ -195,5 +203,6 @@ ul {
   color: #f3c178;
 }
 
-.numbersForm {
+#myNumberText {
+  color: #d8f1a0;
 }

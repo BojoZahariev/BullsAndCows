@@ -41,7 +41,7 @@ startBtn.addEventListener('click', e => {
   clearScreen();
   initialDiv.style.display = 'block';
 
-  bubbleText.textContent = "Choose your number, but don't tell me what it is";
+  bubbleText.textContent = "Choose your number, but don't tell me what it is.";
 });
 
 howToBtn.addEventListener('click', e => {
@@ -55,7 +55,7 @@ playBtn.addEventListener('click', e => {
   clearScreen();
   initialDiv.style.display = 'block';
 
-  bubbleText.textContent = "Choose your number, but don't tell me what it is";
+  bubbleText.textContent = "Choose your number, but don't tell me what it is.";
 });
 
 //Duplicate numbers check
@@ -70,7 +70,7 @@ submitBtn1.addEventListener('click', e => {
     gameDiv.style.display = 'block';
 
     bubbleText.textContent = 'Make a guess';
-    myNumberText.textContent = myNumber;
+    myNumberText.textContent = myNumber.join(' ');
   } else {
     TellOf();
     setTimeout(() => {
@@ -104,7 +104,7 @@ submitBtn2.addEventListener('click', e => {
     TellOf();
 
     setTimeout(() => {
-      bubbleText.textContent = 'Make a guess';
+      bubbleText.textContent = 'Make a guess!';
     }, 3000);
   }
 });
@@ -113,7 +113,7 @@ submitBtn3.addEventListener('click', e => {
   gameDiv.style.display = 'block';
   resultsDiv.style.display = 'none';
 
-  bubbleText.textContent = 'Make a guess';
+  bubbleText.textContent = 'Make a guess!';
   addNumber(myGuess);
   playedNumbers.style.display = 'block';
 });
@@ -240,7 +240,7 @@ const clearScreen = () => {
 };
 
 const TellOf = () => {
-  bubbleText.textContent = 'Every digit has to be different.';
+  bubbleText.textContent = 'Every digit has to be different!';
 
   angryCow.classList.toggle('animatedCow');
 };
