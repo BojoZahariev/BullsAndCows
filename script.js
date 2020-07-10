@@ -130,9 +130,29 @@ const compare = (arr1, arr2) => {
 
   if (bulls === 4) {
     win('You');
+  } else if (bulls > 0 || cows > 0) {
+    bullsAndCows();
   }
 
-  result.textContent = `bulls: ${bulls} cows: ${cows}`;
+  //result.textContent = `bulls: ${bulls} cows: ${cows}`;
+};
+
+const bullsAndCows = () => {
+  //empty result first
+  result.innerHTML = '';
+  for (let index = 0; index < bulls; index++) {
+    let bull = document.createElement('img');
+    bull.src = 'images/bull.png';
+    bull.classList.add('bulls');
+    result.appendChild(bull);
+  }
+
+  for (let index = 0; index < cows; index++) {
+    let cow = document.createElement('img');
+    cow.src = 'images/cow.png';
+    cow.classList.add('bulls');
+    result.appendChild(cow);
+  }
 };
 
 const compareAi = (arr1, arr2) => {
