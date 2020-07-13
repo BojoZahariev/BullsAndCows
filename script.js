@@ -162,17 +162,19 @@ const compare = (arr1, arr2) => {
     }
   }
 
+  //empty result first
+  result.innerHTML = '';
+
   if (bulls === 4) {
     win('You');
   } else if (bulls > 0 || cows > 0) {
-    //empty result first
-    result.innerHTML = '';
     bullsAndCows(result);
   }
 };
 
 //display Bulls and Cows
 const bullsAndCows = parent => {
+  console.log(`b ${bulls} c ${cows}`);
   for (let index = 0; index < bulls; index++) {
     let bull = document.createElement('img');
     bull.src = 'images/bull.png';
