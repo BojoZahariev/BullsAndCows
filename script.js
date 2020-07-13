@@ -9,10 +9,12 @@ const winScreen = document.querySelector('#winScreen');
 const bubble = document.querySelector('#bubble');
 const bubbleText = document.querySelector('#bubbleText');
 const angryCow = document.querySelector('#angryCow');
+const winText = document.querySelector('#winText');
 
 const submitBtn1 = document.querySelector('#submitBtn1');
 const submitBtn2 = document.querySelector('#submitBtn2');
 const submitBtn3 = document.querySelector('#submitBtn3');
+const submitBtn4 = document.querySelector('#submitBtn4');
 
 const myNumberText = document.querySelector('#myNumberText');
 const myGuessText = document.querySelector('#myGuessText');
@@ -122,6 +124,30 @@ submitBtn3.addEventListener('click', e => {
   playedNumbers.style.display = 'block';
 });
 
+submitBtn4.addEventListener('click', e => {
+  res();
+  clearScreen();
+  playedNumbers.innerHTML = '';
+  aiNum = getAiNumber();
+  myNumber = [1, 1, 1, 1];
+  myGuess = [1, 1, 1, 1];
+
+  Array.from(numbers1).forEach(element => {
+    element.textContent = 1;
+  });
+
+  Array.from(numbers2).forEach(element => {
+    element.textContent = 1;
+  });
+
+  submitBtn4.style.visibility = 'hidden';
+
+  console.log(aiNum);
+
+  hero.style.display = 'block';
+  bubbleText.textContent = 'Wanna play a game?';
+});
+
 const compare = (arr1, arr2) => {
   for (i = 0; i < arr2.length; i++) {
     if (arr2[i] === arr1[i]) {
@@ -168,7 +194,7 @@ const compareAi = (arr1, arr2) => {
   }
 
   if (bulls2 === 4) {
-    win('Ai');
+    win('I');
   }
 };
 
@@ -254,8 +280,19 @@ const addNumber = n => {
 const win = winner => {
   clearScreen();
   winScreen.style.display = 'block';
-  bubbleText.textContent = 'Nooooo!';
-  winScreen.textContent = `${winner} win!`;
+
+  if (winner === 'You') {
+    bubbleText.textContent = 'Nooooo!';
+    winText.textContent = 'You Win!';
+    submitBtn4.style.visibility = 'visible';
+  } else {
+    setTimeout(() => {
+      compareAi(myNumber, aiGuess);
+      winText.textContent = 'The Cow Wins!';
+      bubbleText.textContent = 'I Won! Suck my udder!';
+      submitBtn4.style.visibility = 'visible';
+    }, 6000);
+  }
 };
 
 const clearScreen = () => {
