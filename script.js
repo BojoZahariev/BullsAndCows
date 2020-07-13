@@ -65,6 +65,7 @@ function hasDuplicates(array) {
   return new Set(array).size !== array.length;
 }
 
+//Number choice
 submitBtn1.addEventListener('click', e => {
   //Duplicate numbers check
   if (!hasDuplicates(myNumber)) {
@@ -81,6 +82,7 @@ submitBtn1.addEventListener('click', e => {
   }
 });
 
+//Guess submit
 submitBtn2.addEventListener('click', e => {
   //Duplicate numbers check
   if (!hasDuplicates(myGuess) && bulls2 !== 4) {
@@ -115,6 +117,7 @@ submitBtn2.addEventListener('click', e => {
   }
 });
 
+//result confirm btn
 submitBtn3.addEventListener('click', e => {
   gameDiv.style.display = 'block';
   resultsDiv.style.display = 'none';
@@ -124,6 +127,7 @@ submitBtn3.addEventListener('click', e => {
   playedNumbers.style.display = 'block';
 });
 
+//Play again btn
 submitBtn4.addEventListener('click', e => {
   res();
   clearScreen();
@@ -148,6 +152,7 @@ submitBtn4.addEventListener('click', e => {
   bubbleText.textContent = 'Wanna play a game?';
 });
 
+//Compare player guess
 const compare = (arr1, arr2) => {
   for (i = 0; i < arr2.length; i++) {
     if (arr2[i] === arr1[i]) {
@@ -183,6 +188,7 @@ const bullsAndCows = parent => {
   }
 };
 
+//compare AI guess
 const compareAi = (arr1, arr2) => {
   for (i = 0; i < arr2.length; i++) {
     if (arr2[i] === arr1[i]) {
@@ -198,6 +204,7 @@ const compareAi = (arr1, arr2) => {
   }
 };
 
+//generate AI guess
 const getAiGuess = () => {
   for (let i = 0; i < aiHelpGuess.length; i++) {
     if (aiHelpGuess[i] !== '') {
@@ -220,6 +227,7 @@ const getAiGuess = () => {
   }
 };
 
+//generate AI number
 getAiNumber = () => {
   //Only unique numbers
   let numArray = [];
@@ -248,6 +256,7 @@ const res = () => {
   cows2 = 0;
 };
 
+//Input numbers control
 const clickControl = (act, n, faze) => {
   if (faze === 'choose') {
     if (act === 'inc' && myNumber[n] < 9) {
@@ -302,6 +311,7 @@ const clearScreen = () => {
   });
 };
 
+//In case of not unique numbers
 const TellOf = () => {
   bubbleText.textContent = 'Every digit has to be different!';
 

@@ -152,7 +152,7 @@ ul {
 #angryCow {
   position: absolute;
   bottom: -50px;
-  left: -100%;
+  left: -150%;
   -webkit-transform: scaleX(-1) rotate(5deg);
   transform: scaleX(-1) rotate(-10deg);
   z-index: 999;
@@ -178,7 +178,7 @@ ul {
   }
 
   100% {
-    left: -100%;
+    left: -150%;
   }
 }
 
@@ -192,7 +192,7 @@ ul {
   }
 
   100% {
-    left: -100%;
+    left: -150%;
   }
 }
 
