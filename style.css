@@ -336,7 +336,7 @@ ul {
 
   #cow {
     right: -50px;
-    bottom: -200px;
+    bottom: -210px;
   }
 
   #cowImg {
@@ -344,13 +344,13 @@ ul {
   }
 
   #bubbleDiv {
-    top: 100px;
-    right: 100px;
+    top: 130px;
+    right: 200px;
     width: 200px;
   }
 
   #bubbleText {
-    top: 40px;
+    top: 35px;
     padding: 0px 30px;
 
     font-size: 16px;
