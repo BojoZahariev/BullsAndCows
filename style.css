@@ -317,3 +317,42 @@ ul {
 #submitBtn4 {
   visibility: hidden;
 }
+
+@media only screen and (max-width: 768px) {
+  .main {
+    display: block;
+  }
+
+  .mainContainer {
+    width: 100%;
+    top: 100px;
+  }
+
+  .title {
+    top: 10px;
+    font-size: 35px;
+    color: #230007;
+  }
+
+  #cow {
+    right: -50px;
+    bottom: -200px;
+  }
+
+  #cowImg {
+    width: 150px;
+  }
+
+  #bubbleDiv {
+    top: 100px;
+    right: 100px;
+    width: 200px;
+  }
+
+  #bubbleText {
+    top: 40px;
+    padding: 0px 30px;
+
+    font-size: 16px;
+  }
+}
