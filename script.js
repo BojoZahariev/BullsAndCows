@@ -135,6 +135,7 @@ submitBtn4.addEventListener('click', e => {
   aiNum = getAiNumber();
   myNumber = [1, 1, 1, 1];
   myGuess = [1, 1, 1, 1];
+  aiHelpGuess = ['', '', '', ''];
 
   Array.from(numbers1).forEach(element => {
     element.textContent = 1;
@@ -145,8 +146,6 @@ submitBtn4.addEventListener('click', e => {
   });
 
   submitBtn4.style.visibility = 'hidden';
-
-  console.log(aiNum);
 
   hero.style.display = 'block';
   bubbleText.textContent = 'Wanna play a game?';
@@ -174,7 +173,6 @@ const compare = (arr1, arr2) => {
 
 //display Bulls and Cows
 const bullsAndCows = parent => {
-  console.log(`b ${bulls} c ${cows}`);
   for (let index = 0; index < bulls; index++) {
     let bull = document.createElement('img');
     bull.src = 'images/bull.png';

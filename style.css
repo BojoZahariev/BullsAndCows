@@ -358,4 +358,27 @@ ul {
   .instructionsText {
     font-size: 16px;
   }
+
+  #playedNumbers {
+    max-height: 370px;
+    width: 120px;
+    padding: 0px;
+  }
+
+  .playedNumber {
+    font-size: 16px;
+  }
+
+  .playedNumber > .bulls {
+    width: 15px;
+    margin: 0px;
+  }
+
+  #numbersForm2 {
+    justify-content: flex-end;
+  }
+
+  #submitBtn2 {
+    width: 120px;
+  }
 }
