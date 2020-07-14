@@ -72,7 +72,7 @@ submitBtn1.addEventListener('click', e => {
     clearScreen();
     gameDiv.style.display = 'block';
 
-    bubbleText.textContent = 'Make a guess';
+    bubbleText.textContent = 'Make a guess!';
     myNumberText.textContent = myNumber.join(' ');
   } else {
     TellOf();
@@ -102,7 +102,7 @@ submitBtn2.addEventListener('click', e => {
       setTimeout(() => {
         compareAi(myNumber, aiGuess);
 
-        bubbleText.textContent = `My guess is ${aiGuess.join(' ')}`;
+        bubbleText.textContent = `My guess is ${aiGuess.join(' ')}.`;
         submitBtn3.style.visibility = 'visible';
       }, 3000);
 
