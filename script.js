@@ -17,6 +17,7 @@ const submitBtn3 = document.querySelector('#submitBtn3');
 const submitBtn4 = document.querySelector('#submitBtn4');
 
 const myNumberText = document.querySelector('#myNumberText');
+const myNumberText2 = document.querySelector('#myNumberText2');
 const myGuessText = document.querySelector('#myGuessText');
 
 const playedNumbers = document.querySelector('#playedNumbers');
@@ -94,6 +95,7 @@ submitBtn2.addEventListener('click', e => {
     submitBtn3.style.visibility = 'hidden';
     playedNumbers.style.display = 'none';
     myNumberText.textContent = myNumber.join(' ');
+    myNumberText2.textContent = myNumber.join(' ');
 
     getAiGuess();
     compare(aiNum, myGuess);
