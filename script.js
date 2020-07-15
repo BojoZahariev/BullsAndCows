@@ -248,8 +248,8 @@ getAiNumber = () => {
   return numArray;
 };
 
+//Generate the AI number
 aiNum = getAiNumber();
-console.log(aiNum);
 
 const res = () => {
   bulls = 0;
