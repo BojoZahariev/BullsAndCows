@@ -291,6 +291,7 @@ const addNumber = n => {
 const win = winner => {
   clearScreen();
   winScreen.style.display = 'block';
+  winText.textContent = '';
 
   if (winner === 'You') {
     bubbleText.textContent = 'Nooooo!';
@@ -302,7 +303,7 @@ const win = winner => {
       winText.textContent = 'The Cow Wins!';
       bubbleText.textContent = 'I Won! Suck my udder!';
       submitBtn4.style.visibility = 'visible';
-    }, 6000);
+    }, 5000);
   }
 };
 
