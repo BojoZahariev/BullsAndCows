@@ -37,6 +37,7 @@ var myNumber = [1, 1, 1, 1];
 
 var bulls = 0;
 var cows = 0;
+//AI
 var bulls2 = 0;
 var cows2 = 0;
 
