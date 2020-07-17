@@ -35,6 +35,7 @@ let aiGuess = [0, 0, 0, 0];
 var aiHelpGuess = ['', '', '', ''];
 var myNumber = [1, 1, 1, 1];
 
+//player
 var bulls = 0;
 var cows = 0;
 //AI
