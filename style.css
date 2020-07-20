@@ -280,6 +280,7 @@ ul {
   width: 30px;
 }
 
+/* Scrollbar*/
 #playedNumbers::-webkit-scrollbar {
   width: 11px;
 }
@@ -319,6 +320,7 @@ ul {
   visibility: hidden;
 }
 
+/*MEDIA*/
 @media only screen and (max-width: 768px) {
   .main {
     display: block;
