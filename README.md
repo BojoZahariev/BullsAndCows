@@ -1,6 +1,6 @@
 # Bulls and Cows
 
-## Game with numbers
+## Code-breaking game with numbers
 
 ## Tools: JAVASCRIPT, HTML, CSS
 
