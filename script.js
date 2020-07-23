@@ -135,7 +135,9 @@ submitBtn3.addEventListener('click', e => {
 submitBtn4.addEventListener('click', e => {
   res();
   clearScreen();
+  playedNumbers.style.display = 'block';
   playedNumbers.innerHTML = '';
+  playedNumbers.textContent = 'Played:';
   aiNum = getAiNumber();
   myNumber = [1, 1, 1, 1];
   myGuess = [1, 1, 1, 1];
@@ -305,7 +307,7 @@ const win = winner => {
       winText.textContent = 'The Cow Wins!';
       bubbleText.textContent = 'I Won! Suck my udder!';
       submitBtn4.style.visibility = 'visible';
-    }, 5000);
+    }, 4000);
   }
 };
 
