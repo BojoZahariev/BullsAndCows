@@ -28,6 +28,8 @@
           <img id="cowImg" src="images/cow1.png" alt="cow" />
         </div>
 
+
+        <!--Initial screen-->
         <div id="hero" class="containers">
           <div class="btnsDiv">
             <button class="btns" id="startBtn">START</button>
@@ -35,6 +37,7 @@
           </div>
         </div>
 
+         <!--How to play-->
         <div id="instructions" class="containers">
           <p class="instructionsText">
             We will both pick a 4-digit secret number. The digits must be all 
@@ -56,6 +59,7 @@
           <button class="btns" id="playBtn">Play</button>
         </div>
 
+         <!--Pick your number-->
         <div id="initialDiv" class="containers">
           <div class="numbersForm" id="numbersForm1">
             <div class="numbersFormPart">
@@ -85,9 +89,8 @@
           <button id="submitBtn1" class="btns" type="submit">Done</button>
         </div>
 
+         <!--Make a guess-->
         <div id="gameDiv" class="containers">
-         
-
           <div class="numbersForm" id="numbersForm2">
             <div class="numbersFormPart">
               <button class="plusBtn" type="button" onclick="clickControl('inc', 0, 'guess')">+</button>
@@ -120,6 +123,7 @@
           <ul id="playedNumbers">Played:</ul>
         </div>
 
+         <!--Result-->
         <div id="resultsDiv" class="containers">
           <p class="instructionsText resultsPart">Your guess: <span id="myGuessText"></span></p>
           <p id="result" class="resultsPart"></p>
@@ -128,6 +132,7 @@
           <p class="instructionsText myNumText">Your number: <span id="myNumberText2"></span></p>
         </div>
 
+         <!--Win, Loose-->
         <div id="winScreen" class="containers">
           <p id="winText"></p>
           <button id="submitBtn4" class="btns" type="submit">Play Again</button>
