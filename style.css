@@ -149,6 +149,7 @@ ul {
   opacity: 0.8;
 }
 
+/*Cow popping out*/
 #angryCow {
   position: absolute;
   bottom: -50px;
@@ -315,6 +316,7 @@ ul {
   padding: 10px;
 }
 
+/*Result and Win screen buttons*/
 #submitBtn3,
 #submitBtn4 {
   visibility: hidden;
