@@ -122,6 +122,7 @@ ul {
 
 #cowImg {
   width: 250px;
+  filter: drop-shadow(10px 10px 10px black);
 }
 
 #bubbleDiv {
